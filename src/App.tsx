@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import logo from './assets/logo.svg';
 
 import Header from './components/Header';
+import Button from './components/Button';
 
 const Code = styled.code`
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
@@ -44,11 +45,7 @@ const Link = styled.a`
   color: #61dafb;
 `;
 
-const Button = styled.button`
-  font-size: calc(10px + 2vmin);
-`;
-
-export default function App({ num = 0 }) {
+export default function App({ num = 0 }: { num?: number }) {
   const [count, setCount] = useState(num);
 
   return (
